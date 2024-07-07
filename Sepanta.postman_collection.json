@@ -1,0 +1,441 @@
+{
+	"info": {
+		"_postman_id": "ad6f6b3d-3497-4ca7-8535-7b622b9fafeb",
+		"name": "Sepanta",
+		"description": "# 🚀 Get started here\n\nThis template guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.\n\n## 🔖 **How to use this template**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these [request](https://learning.postman.com/docs/sending-requests/requests/) types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT request.\n\n```\n{\n    \"name\": \"Add your name in the body\"\n}\n\n ```\n\n#### **Step 4: Update the variable**\n\nVariables enable you to store and reuse values in Postman. We have created a [variable](https://learning.postman.com/docs/sending-requests/variables/) called `base_url` with the sample request [https://postman-api-learner.glitch.me](https://postman-api-learner.glitch.me). Replace it with your API endpoint to customize this collection.\n\n#### **Step 5: Add tests in the \"Scripts\" tab**\n\nAdding tests to your requests can help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the \"Test Results\" tab.\n\n<img src=\"https://content.pstmn.io/fa30ea0a-373d-4545-a668-e7b283cca343/aW1hZ2UucG5n\" alt=\"\" height=\"1530\" width=\"2162\">\n\n## 💪 Pro tips\n\n- Use folders to group related requests and organize the collection.\n    \n- Add more [scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/) to verify if the API works as expected and execute workflows.\n    \n\n## 💡Related templates\n\n[API testing basics](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9a37a28-055b-49cd-8c7e-97494a21eb54&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[API documentation](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9c28f47-1253-44af-a2f3-20dce4da1f18&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[Authorization methods](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=31a9a6ed-4cdf-4ced-984c-d12c9aec1c27&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16788986",
+		"_collection_link": "https://blue-firefly-192182.postman.co/workspace/%D8%A2%D9%81%D9%84%D8%A7%DB%8C%D9%86~155563de-9f87-49d0-b8be-874ea6ea7733/collection/16788986-ad6f6b3d-3497-4ca7-8535-7b622b9fafeb?action=share&source=collection_link&creator=16788986"
+	},
+	"item": [
+		{
+			"name": "Web",
+			"item": [
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "V1",
+							"item": [
+								{
+									"name": "Register By Email",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "name",
+													"value": "reza",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "test@test.com",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "11111111",
+													"type": "text"
+												},
+												{
+													"key": "password_confirmation",
+													"value": "11111111",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{base_url}}/v1/register",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"v1",
+												"register"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Login By Email",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "email",
+													"value": "test@test.com",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "11111111",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{base_url}}/v1/login",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"v1",
+												"login"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Logout",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token_web}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{base_url}}/v1/logout",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"v1",
+												"logout"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Panel",
+			"item": [
+				{
+					"name": "Product",
+					"item": [
+						{
+							"name": "V1",
+							"item": [
+								{
+									"name": "Store",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "title",
+													"value": "shoes 1",
+													"type": "text"
+												},
+												{
+													"key": "weight",
+													"value": "500",
+													"type": "text"
+												},
+												{
+													"key": "stocks[0][price]",
+													"value": "180",
+													"type": "text"
+												},
+												{
+													"key": "stocks[0][count]",
+													"value": "5",
+													"type": "text"
+												},
+												{
+													"key": "stocks[0][attributes][0]",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "stocks[0][attributes][1]",
+													"value": "2",
+													"type": "text"
+												},
+												{
+													"key": "stocks[1][price]",
+													"value": "200",
+													"type": "text"
+												},
+												{
+													"key": "stocks[1][count]",
+													"value": "0",
+													"type": "text"
+												},
+												{
+													"key": "stocks[1][attributes][0]",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "stocks[1][attributes][1]",
+													"value": "2",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{base_url_panel}}/v1/products",
+											"host": [
+												"{{base_url_panel}}"
+											],
+											"path": [
+												"v1",
+												"products"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Attribute",
+					"item": [
+						{
+							"name": "V1",
+							"item": [
+								{
+									"name": "Store",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "attribute_group_id",
+													"value": "2",
+													"type": "text"
+												},
+												{
+													"key": "name",
+													"value": "Large",
+													"type": "text"
+												},
+												{
+													"key": "value",
+													"value": "L",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{base_url_panel}}/v1/attributes",
+											"host": [
+												"{{base_url_panel}}"
+											],
+											"path": [
+												"v1",
+												"attributes"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update",
+									"request": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "name",
+													"value": "Large",
+													"type": "text"
+												},
+												{
+													"key": "value",
+													"value": "L",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{base_url_panel}}/v1/attributes/:id",
+											"host": [
+												"{{base_url_panel}}"
+											],
+											"path": [
+												"v1",
+												"attributes",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "5"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Destroy",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{base_url_panel}}/v1/attributes/:id",
+											"host": [
+												"{{base_url_panel}}"
+											],
+											"path": [
+												"v1",
+												"attributes",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "5"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Show",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{base_url_panel}}/v1/attributes/:id",
+											"host": [
+												"{{base_url_panel}}"
+											],
+											"path": [
+												"v1",
+												"attributes",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "2"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8000/api"
+		},
+		{
+			"key": "base_url_panel",
+			"value": "http://localhost:8000/api/panel",
+			"type": "string"
+		},
+		{
+			"key": "token_web",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL2xvZ2luIiwiaWF0IjoxNzIwMzg2NzYzLCJleHAiOjE3MjA1NTk1NjMsIm5iZiI6MTcyMDM4Njc2MywianRpIjoiYllFRXV6THBVMGpQSmo1UyIsInN1YiI6IjE4IiwicHJ2IjoiMWQwYTAyMGFjZjVjNGI2YzQ5Nzk4OWRmMWFiZjBmYmQ0ZThjOGQ2MyJ9.H5LWE5NvQ_rGMaIyjqQhqLLfPzn79uDAMr0MPhl-h5w",
+			"type": "string"
+		}
+	]
+}
