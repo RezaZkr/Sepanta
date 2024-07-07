@@ -21,7 +21,7 @@ Route::prefix('v1')->group(function () {
 
 Route::prefix('panel/v1')->as('panel.')->group(function () {
 
-    Route::apiResource('products', ProductController::class);
+    Route::apiResource('products', ProductController::class)->only('store');
 
 });
 
