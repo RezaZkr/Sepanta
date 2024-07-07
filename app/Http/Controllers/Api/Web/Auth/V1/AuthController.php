@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Api\Web\Auth\V1;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\Web\Auth\V1\LoginRequest;
 use App\Http\Requests\Api\Web\Auth\V1\RegisterRequest;
-use App\Http\Resources\Api\Web\V1\CustomerResource;
+use App\Http\Resources\Api\Web\Customer\V1\CustomerResource;
 use App\Mail\Web\WelcomeMail;
 use App\Models\Customer;
 use Illuminate\Http\JsonResponse;

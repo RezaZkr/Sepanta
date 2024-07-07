@@ -10,8 +10,8 @@ enum AttributeGroupSelectTypeEnum: int
     public function labelText(): string
     {
         return match ($this) {
-            self::RADIO => trans('attribute_group.radio'),
-            self::SELECT => trans('attribute_group.select'),
+            self::RADIO => trans('enum.attribute_group.radio'),
+            self::SELECT => trans('enum.attribute_group.select'),
         };
     }
 }
