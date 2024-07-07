@@ -20,7 +20,7 @@ class AuthController extends Controller
         $customer = Customer::query()
             ->create([
                 'name'     => $request->input('name'),
-                'email'    => $request->string('email')->trim(),
+                'email'    => $request->string('email')->trim()->toString(),
                 'password' => $request->input('password'),
             ]);
 
@@ -33,7 +33,7 @@ class AuthController extends Controller
     public function login(LoginRequest $request)
     {
         $customer = Customer::query()
-            ->where('email', $request->string('email')->trim())
+            ->where('email', $request->string('email')->trim()->toString())
             ->first();
 
         if (!$customer || !Hash::check($request->input('password'), $customer->password)) {
